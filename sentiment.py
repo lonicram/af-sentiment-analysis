@@ -16,7 +16,7 @@ def analyze_sentence(sentence: str):
     return ss
 
 
-def get_overall_sentinment_from_scores(score: dict):
+def get_overall_sentiment_from_scores(score: dict):
     """Return overall sentiment basing on scores retrieved from Vader"""
     overall_sentiment = "neutral"
     if score["compound"] >= 0.1:
@@ -31,8 +31,8 @@ if __name__ == "__main__":
     while True:
         user_sentence = input("Provide sentence to be analyzed: ")
         score = analyze_sentence(user_sentence)
-        overall_result = get_overall_sentinment_from_scores(score)
+        overall_result = get_overall_sentiment_from_scores(score)
         print(score)
-        print(f"Overally it's {overall_result} sentence")
+        print(f"Overally it's {overall_result} sentence.")
         if input("Do you want to continue?[y/n]: ").lower() != "y":
             break
